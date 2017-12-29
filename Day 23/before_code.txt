@@ -1,0 +1,44 @@
+b = 99
+c = b
+b *= 100
+b += 100000
+c = b
+c += 17000
+
+LAB A: 
+f = 1
+d = 2
+
+LAB B:
+e = 2
+
+LAB C:
+g = d
+g *= e
+g -= b
+GOTO D if g != 0
+f = 0
+
+LAB D:
+e += 1
+g = e
+g -= b
+GOTO C if g != 0
+d += 1
+g = d
+g -= b
+GOTO B if g != 0
+GOTO E if f != 0
+h += 1
+
+LAB E:
+g = b
+g -= c
+GOTO F if g != 0
+GOTO END
+
+LAB F:
+b += 17
+GOTO A
+
+LAB END:
