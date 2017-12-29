@@ -18,7 +18,7 @@ def recurse_bridge(used, parts_dict, current):
             yield from recurse_bridge(used_copy, parts_dict, cur)
     yield used
 
-all_bridges = list([size for size in recurse_bridge(set(), parts_dict, 0)])
+all_bridges = [size for size in recurse_bridge(set(), parts_dict, 0)]
 max_length = max(map(len, all_bridges))
 longest_bridges = (bridge for bridge in all_bridges if len(bridge) == max_length)
 max_strengh = max(map(lambda bridge: sum([a + b for a, b in bridge]), longest_bridges))
